@@ -53,14 +53,14 @@ Structure
 	- array Vertices
 		- double[3] vertex
 	- array Shapes
-		- uint32 unknown
+		- uint32 textureIdx - Index into Textures
 		- uint32 part - This is the part number in Pepakura
-		- double[4] unknown
-		- array Points
+		- double[4] plane - XYZ normal, perpendicular distance to origin
+		- array Points - Both 2D point data, and edge data (edge between current point and next point)
 			- uint32 index - Index into Vertices
 			- double[2] coord - 2D coordinate
-			- double[2] unknown
-			- bool unknown
+			- double[2] unknown - UV coordinates
+			- bool may_need_tab - True if the edge should receive a tab if it is not contiguous with another shape
 			- double[3] unknown
 			- uint32[3] unknown
 			- float[3] edge_color - RGB
